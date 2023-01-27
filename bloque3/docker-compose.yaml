@@ -13,7 +13,7 @@ services:
 
   reviews:
     image: "g38/reviews-v1"  # nombre de la imagen creada previamente
-    container_name: g38-reviews  # nombre que tendrá el contenedor
+    container_name: g38-reviews  # nombre que tendrá el contenedor 
 
   # reviews-v2:
   #   image: "g38/reviews-v2"  # nombre de la imagen creada previamente

@@ -1,4 +1,4 @@
-from subprocess import call, check_output
+from subprocess import call
 
 # Copiamos la carpeta de la práctica creativa 2 usada por los dockerfile
 call (["git clone https://github.com/smouuuuuk/practica_creativa2"], shell=True)
