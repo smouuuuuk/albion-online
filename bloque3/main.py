@@ -1,7 +1,7 @@
 from subprocess import call
 
 # Copiamos la carpeta de la práctica creativa 2 usada por los dockerfile
-# call (["git clone https://github.com/smouuuuuk/practica_creativa2.git"], shell=True)
+call (["git clone https://github.com/smouuuuuk/practica_creativa2.git"], shell=True)
 
 # Creamos las imágenes
 print("Creando las imágenes...")
@@ -14,7 +14,7 @@ call (["docker build -t g38/reviews-v3 -f ./reviews/Dockerfile --build-arg servi
 print("Imágenes creadas")
 
 # Una vez creadas las imágenes podemos eliminar la carpeta
-# call (["rm -rf ./practica_creativa2"], shell=True)
+call (["rm -rf ./practica_creativa2"], shell=True)
 
 # Lanzamos el docker-compose
 print("Lanzando los contenedores...")
