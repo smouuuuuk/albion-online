@@ -1,7 +1,8 @@
 from subprocess import call, check_output
 
 # Copiamos la carpeta de la práctica creativa 2 usada por los dockerfile
-call (["git clone https://github.com/smouuuuuk/practica_creativa2.git"], shell=True)
+call (["git clone https://github.com/smouuuuuk/practica_creativa2"], shell=True)
+call (['docker run --rm -u root -v "$(pwd)/practica_creativa2/bookinfo/src/reviews":/home/gradle/project -w /home/gradle/project gradle:4.8.1 gradle clean build'], shell=True)
 
 # Creamos las imágenes
 print("Creando las imágenes...")
@@ -12,9 +13,6 @@ call (["docker build -t g38/reviews-v1 -f ./reviews/Dockerfile --build-arg servi
 call (["docker build -t g38/reviews-v2 -f ./reviews/Dockerfile --build-arg service_version=v2 --build-arg enable_ratings=true --build-arg star_color='black' ."], shell=True)
 call (["docker build -t g38/reviews-v3 -f ./reviews/Dockerfile --build-arg service_version=v3 --build-arg enable_ratings=true --build-arg star_color='red' ."], shell=True)
 print("Imágenes creadas")
-
-# Una vez creadas las imágenes podemos eliminar la carpeta
-call (["rm -rf ./practica_creativa2"], shell=True)
 
 # Lanzamos el docker-compose
 print("Lanzando los contenedores...")
