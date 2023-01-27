@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  product-page:
+    image: "g38/product-page"  # nombre de la imagen creada previamente
+    container_name: g38-product-page  # nombre que tendrá el contenedor      
+    ports:
+      - "9080:9080"  # asociamos el puerto 9080 del contenedor con localhost:9080
+
+  details:
+    image: "g38/details"  # nombre de la imagen creada previamente
+    container_name: g38-details  # nombre que tendrá el contenedor
+
+  reviews:
+    image: "g38/reviews-v2"  # nombre de la imagen creada previamente
+    container_name: g38-reviews  # nombre que tendrá el contenedor
+
+  ratings:
+    image: "g38/ratings"  # nombre de la imagen creada previamente
+    container_name: g38-ratings  # nombre que tendrá el contenedor

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: pc2-g38
+description: Despliegue de la práctica creativa 2 utilizando Helm Charts
+version: 0.1.0

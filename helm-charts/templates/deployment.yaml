@@ -1,0 +1,35 @@
+{{- range $name := .Values.different_deployments }}
+{{ $isReview := false }}
+{{ if or (eq $name "reviews-v1") (eq $name "reviews-v2") (eq $name "reviews-v3") }}
+  {{ $isReview = true }}
+{{ end }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $name }}
+  labels:
+    app: {{ if $isReview }}"reviews"{{ else }}{{ $name }}{{ end }}
+    version: v1
+spec:
+  replicas: {{ if eq $name "details" }}3{{ else if eq $name "ratings" }}2{{ else }}1{{ end }}
+  selector:
+    matchLabels:
+      app: {{ if $isReview }}"reviews"{{ else }}{{ $name }}{{ end }}
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: {{ if $isReview }}"reviews"{{ else }}{{ $name }}{{ end }}
+        version: v1
+    spec:
+      containers:
+      - name: {{ if $isReview }}"reviews"{{ else }}{{ $name }}{{ end }}
+        image: rotchamar/g38:{{ $name }} 
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9080
+        securityContext:
+          runAsUser: 1000
+---
+{{- end }} 
+
