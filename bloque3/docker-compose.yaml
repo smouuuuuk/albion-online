@@ -12,8 +12,21 @@ services:
     container_name: g38-details  # nombre que tendrá el contenedor
 
   reviews:
+<<<<<<< HEAD
     image: "g38/reviews-v1"  # nombre de la imagen creada previamente (elegir entre -v1, -v2 y -v3)
     container_name: g38-reviews  # nombre que tendrá el contenedor
+=======
+    image: "rotchamar/g38:reviews-v1"  # nombre de la imagen creada previamente
+    container_name: g38-reviews-v1  # nombre que tendrá el contenedor
+
+  # reviews-v2:
+  #   image: "g38/reviews-v2"  # nombre de la imagen creada previamente
+  #   container_name: g38-reviews-v2  # nombre que tendrá el contenedor
+
+  # reviews-v3:
+  #   image: "g38/reviews-v3"  # nombre de la imagen creada previamente
+  #   container_name: g38-reviews-v3  # nombre que tendrá el contenedor
+>>>>>>> 282dcf3 (Reviews con Imagen Docker Hub)
 
   ratings:
     image: "g38/ratings"  # nombre de la imagen creada previamente
