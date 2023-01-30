@@ -46,5 +46,5 @@ fout.close()
 call(["sudo","cp","practica_creativa2/bookinfo/src/productpage/templates/productpage2.html","practica_creativa2/bookinfo/src/productpage/templates/productpage.html"])
 call(["sudo","rm","practica_creativa2/bookinfo/src/productpage/templates/productpage2.html"])
 
-call(["sudo python3 practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 9080"], shell=True)
+call(["python3 practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 9080"], shell=True)
 #9080 es el puerto en el que queremos que la aplicación reciba las peticiones
