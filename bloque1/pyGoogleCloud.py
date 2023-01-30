@@ -5,8 +5,9 @@ import sys
 import json
 import time
 from subprocess import call
+import os
 
-call(["export GROUP_NUMBER=38"], shell=True)
+os.environ["GROUP_NUMBER"] = "38"
 
 call(["echo 'y' | sudo apt-get update"], shell=True)
 call(["echo 'y' | sudo apt install python3-pip"], shell=True)
