@@ -15,7 +15,7 @@ call("minikube profile pc2")
 call("kubectl apply -f .")
 
 # Esperamos hasta que todos los pods se hayan iniciado
-while (str(subprocess.check_output(["kubectl get pods"])).count("Running") < 9):
+while (str(subprocess.check_output(["kubectl get pods"], shell=True)).count("Running") < 9):
     time.sleep(1)
 
 # Abrimos la web de product-page
