@@ -21,7 +21,7 @@ python3 ./pyGoogleCloud.py
 ```
 Para poder acceder a la web utilizando la IP externa de la máquina debemos primero crear una regla de firewall que nos permita llegar al puerto que estemos utilizando en nuestro proyecto para servir la web, en nuestro caso es el puerto 9080. Crearemos una regla con los siguientes parámetros:
 
-![image](https://user-images.githubusercontent.com/94694675/215090450-277536b6-6b1c-4cb5-a305-ebe0a6e46e02.png)
+![image](https://user-images.githubusercontent.com/94694675/215779094-0401ad19-69c5-450d-b607-cd2d3c394fcf.png)
 
 Una vez creado la regla podremos acceder a `http://external-IP:9080` y podremos ver nuestra web.
 
