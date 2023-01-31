@@ -14,7 +14,6 @@ os.environ["GROUP_NUMBER"] = "38"
 call("sudo apt-get update -y")
 call("sudo apt install python3-pip -y")
 call("git clone https://github.com/CDPS-ETSIT/practica_creativa2.git") #Descargamos los archivos almacenados en el directorio de GitHub de la práctica
-call("pip3 install urllib3")
 call("pip3 install -r practica_creativa2/bookinfo/src/productpage/requirements.txt") #Instalamos las dependencias especificadas en el fichero requirements.txt usando pip(3)
 
 fin = open("practica_creativa2/bookinfo/src/productpage/productpage_monolith.py", 'r') # Fichero de entrada necesario para ejecutar la aplicación
