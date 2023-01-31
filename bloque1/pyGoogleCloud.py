@@ -1,23 +1,16 @@
 #Google Cloud (FALTA dirección IP Pública)
 
 #Importamos las librerías necesarias:
-import sys
-import json
-import time
 from subprocess import call
 import os
 
 os.environ["GROUP_NUMBER"] = "38"
 
-call(["echo 'y' | sudo apt-get update"], shell=True)
-call(["echo 'y' | sudo apt install python3-pip"], shell=True)
+call(["sudo apt-get update -y"], shell=True)
+call(["sudo apt install python3-pip -y"], shell=True)
 call(["git clone https://github.com/CDPS-ETSIT/practica_creativa2.git"], shell=True) #Descargamos los archivos almacenados en el directorio de GitHub de la práctica
 call(["pip3 install urllib3"], shell=True)
-call(["pip3 install flask_bootstrap"], shell=True)
-call(["pip3 install chardet"], shell=True)
 call(["pip3 install -r practica_creativa2/bookinfo/src/productpage/requirements.txt"], shell=True) #Instalamos las dependencias especificadas en el fichero requirements.txt usando pip(3)
-call(["pip3 install --upgrade requests"], shell=True)
-call(["echo 'y' | sudo apt-get update"], shell=True)
 
 fin = open("practica_creativa2/bookinfo/src/productpage/productpage_monolith.py", 'r') # Fichero de entrada necesario para ejecutar la aplicación
 fout = open("practica_creativa2/bookinfo/src/productpage/productpage_monolith2.py", 'w') # Fichero de salida
