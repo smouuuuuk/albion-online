@@ -12,10 +12,10 @@ call("minikube start --driver=docker -p pc2 --nodes 5")
 call("minikube profile pc2")
 
 # Desplegamos los servicios y deployments
-call("kubectl apply -f .")
+call("minikube kubectl apply -- -f .")
 
 # Esperamos hasta que todos los pods se hayan iniciado
-while (str(subprocess.check_output(["kubectl get pods"], shell=True)).count("Running") < 9):
+while (str(subprocess.check_output(["minikube kubectl get pods"], shell=True)).count("Running") < 9):
     time.sleep(1)
 
 # Abrimos la web de product-page
